@@ -2,10 +2,11 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
+    "baseUrl": ".", // Ensure baseUrl is set
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"],
+      "@screens/*": ["app/screens/*"],
+      "@navigation/*": ["./app/navigation/*"] // Add this line
     }
   },
   "include": [
@@ -13,5 +14,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+, "firebase/firebase.js"  ]
 }

@@ -30,10 +30,15 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#F5A124"
         }
       ]
     ],
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F5A124"
+    },
     "experiments": {
       "typedRoutes": true
     }
