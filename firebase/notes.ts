@@ -10,9 +10,8 @@ export interface Note {
   date?: { seconds: number };
 }
 
-/**
- * Creates a new note in Firestore.
- */
+
+// 1) Creates a new note
 export const createNote = async (userId: string, noteData: Omit<Note, 'id'>) => {
   try {
     const notesRef = collection(db, 'users', userId, 'notes');
@@ -24,9 +23,7 @@ export const createNote = async (userId: string, noteData: Omit<Note, 'id'>) => 
   }
 };
 
-/**
- * Fetches all notes for a user from Firestore.
- */
+// 2) Fetches all notes 
 export const fetchNotes = async (userId: string) => {
   try {
     const notesRef = collection(db, 'users', userId, 'notes');
@@ -38,9 +35,9 @@ export const fetchNotes = async (userId: string) => {
   }
 };
 
-/**
- * Deletes a note from Firestore.
- */
+
+//Deletes a note from Firestore.
+
 export const deleteNote = async (userId: string, noteId: string) => {
   try {
     const noteRef = doc(db, 'users', userId, 'notes', noteId);

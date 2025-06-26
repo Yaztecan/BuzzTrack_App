@@ -14,7 +14,7 @@ import { db } from './firebase';
 // We'll re-export addHive under the alias createHive
 export { addHive as createHive };
 
-// Our Hive interface
+// Hive interface
 export interface Hive {
   id?: string;
   name: string;

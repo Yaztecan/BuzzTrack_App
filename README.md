@@ -1,50 +1,133 @@
-# Welcome to your Expo app 👋
+# BuzzTrack 📱🐝
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Monitor smart beehives in real time with **BuzzTrack**, a React Native app built on the [Expo](https://expo.dev) platform and powered by **expo-router** for file-based navigation.
 
-## Get started
+---
 
-1. Install dependencies
+## Table of Contents
 
-   ```bash
-   npm install
-   ```
+1. [Prerequisites](#prerequisites)
+2. [Getting Started](#getting-started)
+3. [Firebase Setup (optional)](#firebase-setup-optional)
+4. [Project Structure](#project-structure)
+5. [Resetting the Project](#resetting-the-project)
+6. [Learn More](#learn-more)
+7. [Community](#community)
 
-2. Start the app
+---
 
-   ```bash
-    npx expo start
-   ```
+## Prerequisites
 
-In the output, you'll find options to open the app in a
+| Tool                                        | Minimum&nbsp;Version | Notes                                             |
+| ------------------------------------------- | -------------------- | ------------------------------------------------- |
+| **Node.js**                                 | 18 LTS               | <https://nodejs.org/>                             |
+| **npm** (bundled with Node) **or** **yarn** | Latest LTS           | <https://www.npmjs.com/> / <https://yarnpkg.com/> |
+| **Expo CLI**                                | 7+                   | Install globally: `npm install -g expo-cli`       |
+| **Expo Go**                                 | Latest               | Android/iOS device for real-device testing        |
+| **Android Studio**                          | Latest               | Optional Android emulator                         |
+| **Xcode** (macOS)                           | Latest               | Optional iOS simulator                            |
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Getting Started
 
-## Get a fresh project
+1. **Clone the repository**
 
-When you're ready, run:
+```bash
+git clone https://github.com/Yaztecan/BuzzTrack_App.git
+cd BuzzTrack_App
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+# or
+yarn
+```
+
+3. **Run the app**
+
+```bash
+npx expo start
+```
+
+The Expo Developer Tools will open in your browser. Choose one of:
+
+- Press `i` – launch the iOS simulator (macOS only)
+- Press `a` – launch the Android emulator
+- Scan the QR code with Expo Go on your phone
+
+---
+
+## Firebase Setup (optional)
+
+Follow these steps only if you need authentication or cloud data:
+
+1. Create a project in the [Firebase Console](https://console.firebase.google.com).
+
+2. Under **Authentication** → **Sign-in method**, enable Email/Password (and any others you need).
+
+3. Add a Web app and copy its configuration snippet.
+
+4. Replace the placeholder values in `firebase/firebase.js`:
+
+```js
+// firebase/firebase.js
+export const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT.appspot.com",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID",
+};
+```
+
+---
+
+## Project Structure
+
+```
+BuzzTrack_App/
+├── app/                # expo-router pages (all lowercase filenames)
+│   ├── index.tsx
+│   └── ...             # other screens
+├── components/         # Reusable UI components
+├── constants/          # Shared constants (colors, sizes, etc.)
+├── firebase/           # Firebase config & helpers
+├── hooks/              # Custom React hooks
+├── scripts/            # Utility scripts
+├── assets/             # Fonts, images, icons
+├── App.js              # Expo entry point
+└── package.json
+```
+
+---
+
+## Resetting the Project
+
+Need a blank slate? Archive the current `app/` folder and spin up a fresh one:
 
 ```bash
 npm run reset-project
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+The existing code moves to `app-example/` and a new empty `app/` directory is created.
 
-## Learn more
+---
 
-To learn more about developing your project with Expo, look at the following resources:
+## Learn More
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- [Expo documentation](https://docs.expo.dev/)
+- [expo-router docs](https://expo.github.io/router/docs)
+- [React Native docs](https://reactnative.dev/)
+- [Firebase docs](https://firebase.google.com/docs)
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
+## Community
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- [Expo on GitHub](https://github.com/expo/expo)
+- [Expo Discord](https://chat.expo.dev)
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/expo)
